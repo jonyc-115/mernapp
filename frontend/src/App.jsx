@@ -5,6 +5,7 @@ import Profile from "./pages/Profile";
 import Signin from "./pages/Signin";
 import SignOut from "./pages/SignUp";
 import Header from "./components/Header";
+import PrivetRoutes from "./components/PrivetRoutes";
 
 function App() {
   return (
@@ -15,7 +16,10 @@ function App() {
         <Route path="/sign-in" element={<Signin />} />
         <Route path="/sign-up" element={<SignOut />} />
         <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<Profile />} />
+
+        <Route element={<PrivetRoutes />}>
+          <Route path="/profile" element={<Profile />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
